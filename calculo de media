@@ -1,0 +1,13 @@
+# Leitura dos numeros
+
+n1 = float(input("Digite o primeiro numero: "))
+n2  = float(input("Digite o segundo numero: "))
+n3  = float(input("Digite o terceiro numero: "))
+
+#calculo de media
+
+media = (n1+n2+n3)/3
+
+#exibicao media
+
+print("A media é:", media)
