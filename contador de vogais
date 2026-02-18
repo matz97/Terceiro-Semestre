@@ -1,0 +1,18 @@
+#Leitura da frase
+
+frase = input("Digite uma frase: ")
+
+
+#Contador de vogais
+
+vogais = "aeiouAEIOU"
+contador = 0
+
+for letra in frase :
+    if letra in vogais:
+        contador += 1
+
+
+#Exibicao do resultado
+
+print("Qauntidade de vogais", contador)
