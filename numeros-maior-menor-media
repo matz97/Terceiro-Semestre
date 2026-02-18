@@ -1,0 +1,24 @@
+#Leitura da quantidade de numeros
+
+n = int(input("Quantos numeros voce deseja digitar? "))
+
+numeros = []
+
+#Leitura dos numeros
+
+for i in range(n):
+    valor = float(input(f"Digite o {i + 1 }º numero:"))
+    numeros.append(valor)
+
+    #Calculos
+
+    maior = max(numeros)
+    menor = min(numeros)
+    media = sum(numeros) / n 
+
+    #Exibicao dos resultados
+
+    print("Numeros digitados", numeros)
+    print("Maior numero:", maior)
+    print("Menor numero:", menor)
+    print("Media", media)
