@@ -1,0 +1,251 @@
+1. O que é uma árvore em estrutura de dados?
+Uma árvore é uma estrutura de dados formada por nós conectados entre si de maneira hierárquica.
+Ela se parece com uma árvore genealógica:
+existe um nó principal,
+dele surgem outros nós,
+formando ramificações.
+As árvores são usadas em:
+sistemas de arquivos,
+bancos de dados,
+inteligência artificial,
+sites e menus.
+
+2. O que é o nó raiz?
+O nó raiz é o primeiro nó da árvore.
+Todos os outros nós surgem a partir dele.
+       A
+      / \
+     B   C
+O nó raiz é:
+A
+
+3. O que são nós filhos?
+Nós filhos são os nós ligados diretamente a outro nó.
+Exemplo:
+       A
+      / \
+     B   C
+B é filho de A
+C também é filho de A
+
+4. O que é um nó folha?
+Nó folha é um nó que não possui filhos.
+
+Exemplo:
+       A
+      / \
+     B   C
+B e C são nós folha.
+
+5. Diferença entre árvore e lista
+Lista                                      Árvore
+
+Elementos em sequência               Elementos hierárquicos
+Ordem linear                          Estrutura ramificada
+Cada item aponta para o próximo      Um nó pode ter vários filhos
+
+6. Representação simples usando dicionários
+arvore = {
+    "valor": "A",
+    "filhos": ["B", "C"]
+}
+
+print(arvore)
+
+7. Árvore com raiz e dois filhos
+arvore = {
+    "raiz": "A",
+    "esquerda": "B",
+    "direita": "C"
+}
+
+print("Raiz:", arvore["raiz"])
+print("Filho esquerdo:", arvore["esquerda"])
+print("Filho direito:", arvore["direita"])
+
+8. Árvore representando uma família
+familia = {
+    "avo": "Carlos",
+    "filhos": {
+        "Joao": ["Ana", "Pedro"],
+        "Maria": ["Lucas", "Julia"]
+    }
+}
+
+print(familia)
+
+9. O que é uma árvore binária?
+Uma árvore binária é uma árvore em que cada nó pode possuir no máximo dois filhos:
+filho esquerdo,
+filho direito.
+
+Exemplo:
+        10
+       /  \
+      5    20
+
+10. Árvore binária usando classe
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+raiz = No(10)
+
+raiz.esquerda = No(5)
+raiz.direita = No(20)
+
+print(raiz.valor)
+
+11. Classe No com valor, esquerda e direita
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+12. Inserir valores manualmente
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+raiz = No(50)
+
+raiz.esquerda = No(30)
+raiz.direita = No(70)
+
+print("Valor da raiz:", raiz.valor)
+
+13. Exibir filho esquerdo e direito
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+raiz = No(100)
+
+raiz.esquerda = No(50)
+raiz.direita = No(150)
+
+print("Esquerda:", raiz.esquerda.valor)
+print("Direita:", raiz.direita.valor)
+
+14. O que significa percorrer uma árvore?
+Percorrer uma árvore significa visitar todos os nós da árvore em uma determinada ordem.
+
+Os percursos mais comuns são:
+pré-ordem,
+em ordem,
+pós-ordem.
+
+15. Percurso em pré-ordem
+No percurso em pré-ordem:
+visita a raiz,
+percorre a esquerda,
+percorre a direita.
+Exemplo:
+A → B → C
+
+Codigo : def pre_ordem(no):
+    if no:
+        print(no.valor)
+        pre_ordem(no.esquerda)
+        pre_ordem(no.direita)
+
+16. Percurso em ordem
+No percurso em ordem:
+percorre a esquerda,
+visita a raiz,
+percorre a direita.
+Muito usado em árvores binárias de busca.
+
+Código: def em_ordem(no):
+    if no:
+        em_ordem(no.esquerda)
+        print(no.valor)
+        em_ordem(no.direita)
+
+17. Percurso em pós-ordem
+No percurso em pós-ordem:
+percorre a esquerda,
+percorre a direita,
+visita a raiz.
+
+Código: def pos_ordem(no):
+    if no:
+        pos_ordem(no.esquerda)
+        pos_ordem(no.direita)
+        print(no.valor)
+
+18. Contar quantos nós existem
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+def contar_nos(no):
+    if no is None:
+        return 0
+
+    return 1 + contar_nos(no.esquerda) + contar_nos(no.direita)
+
+raiz = No(10)
+raiz.esquerda = No(5)
+raiz.direita = No(20)
+
+print("Quantidade de nós:", contar_nos(raiz))
+
+19. Calcular a altura da árvore
+class No:
+    def __init__(self, valor):
+        self.valor = valor
+        self.esquerda = None
+        self.direita = None
+
+def altura(no):
+    if no is None:
+        return 0
+
+    esquerda = altura(no.esquerda)
+    direita = altura(no.direita)
+
+    return 1 + max(esquerda, direita)
+
+raiz = No(10)
+raiz.esquerda = No(5)
+raiz.direita = No(20)
+raiz.esquerda.esquerda = No(2)
+
+print("Altura:", altura(raiz))
+
+20. Aplicação real do conceito de árvore
+Situação do mundo real
+
+O sistema de pastas do computador funciona como uma árvore.
+
+Exemplo: Documentos
+ ├── Fotos
+ ├── Trabalhos
+ │     ├── Escola
+ │     └── Faculdade
+
+Exemplo em Python
+
+sistema_arquivos = {
+    "Documentos": {
+        "Fotos": {},
+        "Trabalhos": {
+            "Escola": {},
+            "Faculdade": {}
+        }
+    }
+}
+
+print(sistema_arquivos)
+
+
