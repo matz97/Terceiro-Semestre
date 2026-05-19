@@ -1,0 +1,231 @@
+1. O que é uma fila em programaçao?
+Uma fila é uma estrutura de dados usada para armazenar elementos em sequência.
+Ela funciona de forma parecida com uma fila de pessoas no banco ou mercado: o primeiro que entra é o primeiro que sai.
+As filas são muito usadas em:
+sistemas de atendimento,impressão de documentos,processamento de tarefas,controle de acesso.
+
+2. Regra principal da fila - FIFO
+FIFO significa:
+
+First In, First Out
+(Primeiro a entrar, primeiro a sair)
+
+Exemplo: 
+Joao entra na fila
+Maria entra depois
+Pedro entra depois
+
+A ordem de saida sera
+1. Joao
+2. Maria
+3. Pedro
+
+3. Criar uma fila vazia em Python
+fila = []
+
+4. Adicionar cinco elementos usando append()
+fila []
+
+fila.append(1)
+fila.append(2)
+fila.append(3)
+fila.append(4)
+fila.append(5)
+
+print(fila)
+
+5. Remover o primeiro elemento usando pop(0)
+fila = [10, 20, 30]
+
+removido = fila.pop(0)
+
+print("Elemento removido:", removido)
+print("Fila atual:", fila)
+
+6. Programa com números 10, 20, 30 e 40
+fila = []
+
+fila.append(10)
+fila.append(20)
+fila.append(30)
+fila.append(40)
+
+print("Fila completa:", fila)
+
+7. Remover todos os elementos da fila
+fila = [1, 2, 3, 4, 5]
+
+while fila:
+    removido = fila.pop(0)
+    print("Removido:", removido)
+
+8. Verificar se a fila está vazia
+fila = []
+
+if len(fila) == 0:
+    print("A fila está vazia.")
+else:
+    removido = fila.pop(0)
+    print("Elemento removido:", removido)
+
+9. Fila com nomes
+fila = ["Ana", "Carlos", "Marcos", "Julia"]
+
+print("Primeiro da fila:", fila[0])
+
+10. Ler cinco nomes do usuário
+fila = []
+
+for i in range(5):
+    nome = input("Digite um nome: ")
+    fila.append(nome)
+
+print("Fila:", fila)
+
+11. Remover nomes na mesma ordem
+fila = []
+
+for i in range(5):
+    nome = input("Digite um nome: ")
+    fila.append(nome)
+
+print("\nRemovendo nomes:")
+
+while fila:
+    print(fila.pop(0))
+
+12. Função enfileirar()
+def enfileirar(fila, valor):
+    fila.append(valor)
+
+fila = []
+
+enfileirar(fila, 100)
+enfileirar(fila, 200)
+
+print(fila)
+
+13. Função desenfileirar()
+def desenfileirar(fila):
+    return fila.pop(0)
+
+fila = [10, 20, 30]
+
+print(desenfileirar(fila))
+print(fila)
+
+14. Função primeiro()
+def primeiro(fila):
+    return fila[0]
+
+fila = [5, 10, 15]
+
+print(primeiro(fila))
+
+15. Função esta_vazia()
+def esta_vazia(fila):
+    return len(fila) == 0
+
+fila = []
+
+print(esta_vazia(fila))
+
+16. Simulação de fila de atendimento
+fila = []
+
+while True:
+    print("\n1 - Adicionar pessoa")
+    print("2 - Atender pessoa")
+    print("3 - Sair")
+
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        nome = input("Nome da pessoa: ")
+        fila.append(nome)
+
+    elif opcao == "2":
+        if fila:
+            atendido = fila.pop(0)
+            print("Atendido:", atendido)
+        else:
+            print("Fila vazia.")
+
+    elif opcao == "3":
+        break
+
+17. Menu completo da fila
+fila = []
+
+while True:
+    print("\n1 - Enfileirar")
+    print("2 - Desenfileirar")
+    print("3 - Mostrar primeiro")
+    print("4 - Mostrar fila")
+    print("5 - Sair")
+
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        valor = input("Digite um valor: ")
+        fila.append(valor)
+
+    elif opcao == "2":
+        if fila:
+            print("Removido:", fila.pop(0))
+        else:
+            print("Fila vazia.")
+
+    elif opcao == "3":
+        if fila:
+            print("Primeiro:", fila[0])
+        else:
+            print("Fila vazia.")
+
+    elif opcao == "4":
+        print("Fila:", fila)
+
+    elif opcao == "5":
+        break
+
+18. Fila de impressão
+fila_impressao = []
+
+while True:
+    documento = input("Digite o nome do documento (ou sair): ")
+
+    if documento == "sair":
+        break
+
+    fila_impressao.append(documento)
+
+print("\nImprimindo documentos:")
+
+while fila_impressao:
+    print("Imprimindo:", fila_impressao.pop(0))
+
+19. Fila de senhas
+fila = []
+
+for i in range(1, 6):
+    senha = f"SENHA-{i}"
+    fila.append(senha)
+
+print("Chamando senhas:\n")
+
+while fila:
+    print("Atendendo:", fila.pop(0))
+
+20. Exemplo real de aplicação de fila
+pedidos = []
+
+# Novos pedidos
+pedidos.append("Pizza")
+pedidos.append("Hamburguer")
+pedidos.append("Lasanha")
+
+print("Preparando pedidos:\n")
+
+while pedidos:
+    pedido = pedidos.pop(0)
+    print("Pedido preparado:", pedido)
