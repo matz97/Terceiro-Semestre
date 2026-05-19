@@ -1,0 +1,233 @@
+1. O que é uma pilha em programaçao?
+Uma pilha é uma estrutura de dados usada para armazenar elementos de forma organizada.
+Ela funciona como uma pilha de pratos: o último prato colocado é o primeiro a ser retirado.
+Em programaçao, a pilha é muito utilizada para: controle de funçoes, desfazer açoes, historico de navegaçao e processamento de expressoes
+
+2. Regra de funcionamento da pilha (LIFO)
+A principal regra de uma pilha é o conceito LIFO:
+
+Last In, First Out
+(ultimo a entrar, primeiro a sair)
+
+pilha = [1,2, 3]
+O numero 3 foi o ultimo a entrar, entao sera o primeiro a sair
+
+3. Criando uma pilha vazia em Python
+pilha = []
+print(pilha)
+
+4. Adicionando cinco elementos em append()
+pilha = []
+
+pilha.append(10)
+pilha.append(20)
+pilha.append(30)
+pilha.append(40)
+pilha.append(50)
+print(pilha)
+
+5. Removendo o ultimo elemento com pop()
+pilha = [10, 20, 30]
+
+removido = pilha.pop()
+print("Elemento removido:", removido)
+print("Pilha atual:", pilha)
+
+6. Programa adicionando 10,20,30 e 40
+
+pilha = []
+
+pilha.append(10)
+pilha.append(20)
+pilha.append(30)
+pilha.append(40)
+print("Pilha completa:", pilha)
+
+7. Removendo todos os elementos da pilha
+pilha = [10, 20, 30, 40]
+
+while pilha:
+  removido = pilha.pop()
+  print("Removido:", removido)
+
+8. Verificando se a pilha esta vazia
+pilha = []
+
+if pilha:
+  removido = pilha.pop()
+  print(removido)
+else:
+  print("A pilha esta vazia.")
+
+9. Pilha com nomes de livros
+livros = []
+
+livros.append("Dom Casmurro")
+livros.append("O Hobbit")
+livros.append("1984")
+
+print("Livro no topo:", livros[-1])
+
+10. Lendo cinco nomes do usuario
+pilha = []
+
+for i in range(5):
+  nome = input("Digite um nome: ")
+  pilha.append(nome)
+
+print("Nomes armazenados:", pilha)
+
+11. Exibindo nomes na ordem inversa
+pilha = []
+
+for i in range(5):
+  nome = input("Digite um nome: ")
+  pilha.append(nome)
+
+print("\nNomes em ordem inversa:")
+
+while pilha:
+  print(pilha.pop())
+
+12. Funçao empilhar()
+def empilhar(pilha, valor):
+  pilha.append(valor)
+
+#Exemplo
+pilha = []
+
+empilhar(pilha, 10)
+empilhar(pilha, 20)
+print(pilha)
+
+13. Funçao despilhar
+def desempilhar(pilha):
+  return pilha.pop()
+
+#Exemplo
+pilha = [10, 20, 30]
+print(desempilhar(pilha))
+print(pilha)
+
+14. Funçao topo()
+def topo(pilha):
+  return pilha[-1]
+
+#Exemplo
+pilha = [10, 20, 30]
+print("Topo:", topo(pilha))
+
+15. Funçao esta_vazia()
+def esta_vazia(pilha):
+  return len(pilha) == 0
+
+#Exemplo
+pilha = []
+print(esta_vazia(pilha))
+
+16. Simulaçao de pilha de pratos
+pilha = []
+
+while True:
+  print("\n1 - Adicionar prato")
+  print("2 - Remover prato")
+  print("3 - Sair")
+
+  opcao = input("Escolha: ")
+
+if prato == "1":
+  prato = input("Nome do prato: ")
+  pilha.append(prato)
+
+elif opcao == "2":
+  if pilha:
+  print("Prato removido: ", pilha.pop())
+  else: 
+  print("Nenhum prato na pilha.")
+
+elif opcao == "3":
+  break
+
+17. Menu completo de pilha
+pilha = []
+
+while True:
+  print("n\1 - Empilhar")
+  print("2 - Deesempilhar")
+  print("3 - Mostrar topo")
+  print("4 - Mostrar pilha")
+  print("5 - Sair")
+
+  opcao = input("Escolha uma opçao: ")
+
+if opcao == "1":
+  valor = input("Digite um valor: ")
+  pilha.append(valor)
+
+elif opcao == "2":
+  if pilha:
+      print("Removido:", pilha.pop())
+  else:
+      print("Pilha vazia.")
+
+elif opcao == "3":
+  if pilha:
+    print("Topo:", pilha[-1])
+  else:
+    print("Pilha vazia.")
+
+elif opcao == "4":
+  print("Pilha:", pilha)
+
+elif opcao == "5":
+  break 
+
+18. Invertendo uma palavra com pilha
+palavra = input("Digite uma palavra: ")
+
+pilha = []
+
+for letra in palavra:
+    pilha.append(letra)
+
+invertida = ""
+
+while pilha:
+    invertida += pilha.pop()
+print("Palavra invertida:", invertida)
+
+19. Verificando palindromo usando pilha
+palavra = input("Digite uma palavra: ")
+
+pilha = []
+
+for letra in palavra:
+    pilha.append(letra)
+
+invertida = ""
+
+while pilha:
+  invertida += pilha.pop()
+
+if palavra == invertida:
+  print("É um palindromo.")
+else:
+  print("Não é um palindromo.")
+
+20. Exemplo real de uso em pilha
+
+acoes = []
+
+#Usuario escreve algo
+acoes.append("Digitou A")
+acoes.append("Digitou B")
+acoes.append("Digitou C")
+
+print("Ações:", acoes)
+
+# Desfazer ultima ação
+ultima = acoes.pop()
+
+print("Ação desfeita:", ultima)
+print("Ações restantes:", acoes)
+
